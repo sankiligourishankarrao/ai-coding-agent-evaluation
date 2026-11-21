@@ -14,6 +14,13 @@ All of this was paid client work under confidentiality rules, so no task files, 
 
 I build terminal tasks end to end in the open [Terminal-Bench](https://www.tbench.ai/) format. An AI coding agent works inside a Docker container, and a verifier scores its output automatically.
 
+Tasks I have built (described by type only; the tasks themselves are unreleased):
+
+| Category | What the agent must do | Agent's output | Expert time |
+|---|---|---|---|
+| Debugging and repair: pipeline and orchestration | Diagnose a failed recovery of an event-driven job system and rebuild its correct state from logs, data and a written specification | Repaired SQLite database + JSON reconciliation report | ~10 hours |
+| File and media operations: video processing | Repair a broken video-recovery tool so it rebuilds the correct timeline from many partial, overlapping clips | Fixed program, rebuilt MP4 video + JSON manifest | ~14 hours |
+
 What I build for each task:
 
 - **Instruction:** the problem, absolute file paths, and every output the agent must produce, without giving away the method.
@@ -49,7 +56,7 @@ How I check a task before submitting it:
 
 *Outlier AI*
 
-Tasks built from real GitHub pull requests that fix a visual bug, where the screenshot is the main evidence.
+Tasks built from real GitHub pull requests that fix a visual bug, where the screenshot is the main evidence. Example: a cross-file visual bug fix in a large open-source TypeScript data-visualization web app with deck.gl map charts, where the task can only be solved by reading the screenshot.
 
 - Check the screenshot evidence against the original issue and replace it if it is cropped, wrong or missing.
 - Remove solution hints from the instruction so the agent has to work from the symptom and the screenshot.
@@ -60,9 +67,9 @@ Tasks built from real GitHub pull requests that fix a visual bug, where the scre
 
 *Outlier AI*
 
-- Design multi-step agent tasks (gather data, reason, produce an output) and run them live on two models.
+- Design multi-step agent tasks (gather data, reason, produce an output) and run them live on two models. Example: an agent that searches live rental listings, compares them with a lease renewal using fixed price thresholds, and saves a short report.
 - Write weighted pass/fail rubrics, pytest verifiers that check the final system state, and safety-failure annotations.
-- Write tool-calling prompts that need 4 or more chained tool calls, with distractor tools, one verifiable answer and step-level rubrics.
+- Write tool-calling prompts that need 4 or more chained tool calls across tools such as an issue tracker, email and accounting records, with 10+ distractor tools, one verifiable answer and step-level rubrics.
 
 ## 6. Reviewing other contributors' work
 
