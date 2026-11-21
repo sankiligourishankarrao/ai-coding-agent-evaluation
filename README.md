@@ -51,6 +51,7 @@ How I check a task before submitting it:
 - Write coding task prompts with fully specified interfaces and only one correct reading.
 - Build unit test suites that fail on the starting code and pass on the reference solution, confirmed in Docker.
 - Deliver the full package: prompt, reference solution, tests, rubric and Docker validation scripts.
+- Example: a Rust concurrency task, a bounded lock-free multi-producer multi-consumer channel with blocking and async APIs. It is graded by 50 Fail-to-Pass tests (all 50 fail on the empty starting code and all 50 pass on the reference solution), with loom model-checking tests for thread interleavings and throughput benchmarks.
 
 ## 4. Hardening multimodal coding tasks
 
@@ -81,7 +82,7 @@ Tasks built from real GitHub pull requests that fix a visual bug, where the scre
 
 ## Tools and skills
 
-Python (Pandas, NumPy) · pytest · Bash · SQL · Docker · Harbor · Terminal-Bench · Git · GitHub · Linux command line · Cursor
+Python (Pandas, NumPy) · pytest · Rust test tooling (cargo test, loom) · Bash · SQL · Docker · Harbor · Terminal-Bench · Git · GitHub · Linux command line · Cursor
 
 **Evaluation skills:** LLM evaluation, rubric writing, Fail-to-Pass test design, adversarial prompt design, red-teaming, agentic and tool-use task design, model failure analysis, fact-checking against primary sources
 
